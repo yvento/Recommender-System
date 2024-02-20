@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Recommendation System</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        .result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product Recommendation System</h1>
+        <form id="recommendationForm">
+            <label for="user_id">Enter Your User ID:</label>
+            <input type="text" id="user_id" name="user_id" required>
+            <button type="submit">Get Recommendations</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#recommendationForm').on('submit', function(e) {
+                e.preventDefault();
+                var userId = $('#user_id').val();
+                $.ajax({
+                    url: '/recommend',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ "user_id": userId }),
+                    success: function(data) {
+                        var results = '<h2>Recommendations</h2><ul>';
+                        $.each(data, function(index, value) {
+                            results += '<li>Product ID: ' + value[0] + ' - Predicted Rating: ' + value[1] + '</li>';
+                        });
+                        results += '</ul>';
+                        $('#result').html(results);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                        $('#result').html('<p>An error occurred. Please try again.</p>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
