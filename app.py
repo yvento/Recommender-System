@@ -29,10 +29,10 @@ def recommend():
     rated_products = ratings_data[ratings_data['CustomerID'] == user_id]['ProductID'].unique()
     user_recommendations = new_predicted_ratings[new_predicted_ratings['CustomerID'] == user_id]
     new_recommendations = user_recommendations[~user_recommendations['ProductID'].isin(rated_products)]
-    top_recommendations = new_recommendations.sort_values(by='predicted_rating', ascending=False).head(products_number)
+    top_recommendations = new_recommendations.sort_values(by='Predicted Rating', ascending=False).head(products_number)
 
     # Generate recommendations for the requested user
-    output = list(zip(top_recommendations['ProductID'], round(top_recommendations['predicted_rating'], 2)))
+    output = list(zip(top_recommendations['ProductID'], round(top_recommendations['Predicted Rating'], 2)))
 
     return jsonify(output)
 
