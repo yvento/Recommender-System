@@ -1,4 +1,4 @@
-# Personalized Recommender System
+# Personalized E-commerce Recommender System
 
 This project implements a sophisticated machine learning-based recommender system that personalizes product suggestions using Singular Value Decomposition (SVD). Developed in Python and integrated with a Flask web application, it aims to enhance user experience on e-commerce platforms by tailoring recommendations to individual user preferences.
 
