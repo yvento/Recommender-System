@@ -1,0 +1,16 @@
+# Jupyter notebooks and checkpoints
+*.ipynb
+.ipynb_checkpoints
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Data (optional — remove if you need CSVs inside Docker)
+*.csv
+
+# Env files
+.env
