@@ -27,46 +27,48 @@ I trained and evaluated the recommender with cross-validation (3 folds). The mai
 
 This basically means the model predicts within about **0.8 stars on average**, which is pretty good for a 1–5 rating scale.
 
----
-
 ## Project Structure
+
+```
 .
-├── Data/ # Dataset files
-├── templates/ # HTML templates for Flask
-├── app.py # Flask application
-├── Recommendation system.ipynb # Notebook used for training and experiments
-├── Recommendation Model.pkl # Trained SVD model
-├── Predicted ratings.csv # Predictions generated for recommendations
-├── requirements.txt # Dependencies
-├── pyproject.toml # Project metadata
-├── runtime.txt # Runtime environment (Python version)
-├── Procfile # For deployment on Render/Heroku
-├── Dockerfile # Containerization setup
+├── Data/                         # Dataset files
+├── templates/                    # HTML templates for Flask
+├── app.py                        # Flask application
+├── Recommendation system.ipynb   # Notebook used for training and experiments
+├── Recommendation Model.pkl      # Trained SVD model
+├── Predicted ratings.csv         # Predictions generated for recommendations
+├── requirements.txt              # Dependencies
+├── pyproject.toml                 # Project metadata
+├── runtime.txt                   # Runtime environment (Python version)
+├── Procfile                      # For deployment on Render/Heroku
+├── Dockerfile                    # Containerization setup
 └── README.md
-
-
----
+```
 
 ## How to Run It
+
 If you want to try running it locally:
 
-**1. Clone the repo***
-   ```bash
-   git clone https://github.com/yvento/Recommender-System.git
-   cd Recommender-System
-pip install -r requirements.txt
+**1. Clone the repo**
+```bash
+git clone https://github.com/yvento/Recommender-System.git
+cd Recommender-System
+```
 
 **2. Install requirements**
-
+```bash
 pip install -r requirements.txt
+```
 
 **3. Launch the Flask app**
-
+```bash
 python app.py
+```
 
-Then open your browser at [http://127.0.0.1:5000](http://127.0.0.1:5000/)
+Now open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
 Enter a customer ID and you’ll get personalized recommendations.
+
 
 ## **Deployment**
 
@@ -88,7 +90,7 @@ I deployed it on Render, which means you can test it directly [here](https://rec
 
 ## **Author**
 
-Yves Mfitumukiza Ndayisaba
+**Yves Mfitumukiza Ndayisaba**
 [yventobusiness24@gmail.com](mailto:yventobusiness24@gmail.com)
 
 [LinkedIn](https://www.linkedin.com/in/yves-mfitumukiza-ndayisaba/)
