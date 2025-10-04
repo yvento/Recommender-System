@@ -8,6 +8,7 @@ app = Flask(__name__)
 model = pickle.load(open('Recommendation Model.pkl', 'rb'))
 ratings_data = pd.read_json('Data/ratings.json')
 new_predicted_ratings = pd.read_csv('Predicted ratings.csv')
+print("CSV columns:", new_predicted_ratings.columns.tolist(), flush=True)
 
 ratings_data['CustomerID'] = ratings_data['CustomerID'].astype(int)
 new_predicted_ratings['CustomerID'] = new_predicted_ratings['CustomerID'].astype(int)
