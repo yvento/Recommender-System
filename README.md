@@ -1,46 +1,94 @@
 # Personalized E-commerce Recommender System
 
-This project implements a sophisticated machine learning-based recommender system that personalizes product suggestions using Singular Value Decomposition (SVD). Developed in Python and integrated with a Flask web application, it aims to enhance user experience on e-commerce platforms by tailoring recommendations to individual user preferences.
+This is a machine learning-based recommender system that I built to give personalized product suggestions using **Singular Value Decomposition (SVD)**.  
+It’s developed in Python, trained in a Jupyter Notebook, and then deployed with Flask so it can run as a web app. The goal was to make it feel like a real recommender you’d see on an e-commerce platform, and not just a notebook project.
+
+🔗 **Live Demo:** [Recommender System on Render](https://recommender-system-1-p6t4.onrender.com)  
+(You can test it by entering a sample customer ID like `103611`)
+
+---
 
 ## Features
+- Personalized recommendations based on user–item interaction data.  
+- SVD algorithm from the Surprise library for rating prediction.  
+- Flask application so you can interact with it through a web page.  
+- Deployment setup (Procfile, Dockerfile) so it can run on Render or other platforms.  
+- UI updated to be clean and simple so anyone testing it can quickly see results.
 
-- **Personalized Recommendations**: Leverages user-item interaction data to generate tailored product suggestions.
-- **SVD Algorithm**: Utilizes SVD for accurate prediction of user preferences.
-- **Flask Application**: Includes a Flask web application for easy demonstration and deployment.
-- **Scalability**: Designed to efficiently handle large datasets and user bases.
+---
 
-### Prerequisites
+## Model Results
+I trained and evaluated the recommender with cross-validation (3 folds). The main metrics are RMSE and MAE.
 
-Things you need to install
+| Metric | Mean | Std |
+|--------|------|-----|
+| RMSE   | 1.1920 | 0.0024 |
+| MAE    | 0.8406 | 0.0018 |
 
-```bash
-python >= 3.6
-Flask
-pandas
-matplotlib
-scikit-learn
-suprise
-```
-## Usage
-This recommender system can be integrated into e-commerce platforms or content providers to enhance user experience with personalized suggestions. The Flask application serves as a demonstration of how the system can be deployed and interacted with in a real-world scenario.
+This basically means the model predicts within about **0.8 stars on average**, which is pretty good for a 1–5 rating scale.
 
-## How to run
-To run the recommender system and the Flask web application, follow these steps:
+---
 
-1. **Run the Jupyter Notebook:** Open the Recommendation System.ipynb notebook and run all the cells to initialize the recommender system.
-2. **Launch the Flask Application:** Run App.py and this will start the web server and print a URL to the console, typically http://127.0.0.1:5000/.
-3. **Interact with the Web Application:**
-- Open a web browser and go to the URL provided by the Flask application.
-- Enter the user ID of the customer for whom you want to generate recommendations in the provided input field.
-- Click on the "Get Recommendations" button to view the personalized product suggestions.
-
-## Future Work
-
-- **Model Improvement:** Explore more advanced recommendation algorithms and feature engineering techniques to enhance recommendation accuracy.
-- **User Interface Enhancements:** Develop a more interactive and user-friendly web interface for the Flask application.
-- **Scalability:** Implement optimizations for handling larger datasets and user bases without compromising performance.
-
-## Authors
-Yves Mfitumukiza Ndayisaba - Initial work - [yvento](https://github.com/yvento)
+## Project Structure
+.
+├── Data/ # Dataset files
+├── templates/ # HTML templates for Flask
+├── app.py # Flask application
+├── Recommendation system.ipynb # Notebook used for training and experiments
+├── Recommendation Model.pkl # Trained SVD model
+├── Predicted ratings.csv # Predictions generated for recommendations
+├── requirements.txt # Dependencies
+├── pyproject.toml # Project metadata
+├── runtime.txt # Runtime environment (Python version)
+├── Procfile # For deployment on Render/Heroku
+├── Dockerfile # Containerization setup
+└── README.md
 
 
+---
+
+## How to Run It
+If you want to try running it locally:
+
+**1. Clone the repo***
+   ```bash
+   git clone https://github.com/yvento/Recommender-System.git
+   cd Recommender-System
+pip install -r requirements.txt
+
+**2. Install requirements**
+
+pip install -r requirements.txt
+
+**3. Launch the Flask app**
+
+python app.py
+
+Then open your browser at [http://127.0.0.1:5000](http://127.0.0.1:5000/)
+
+Enter a customer ID and you’ll get personalized recommendations.
+
+## **Deployment**
+
+For deployment, I added both a Procfile and a Dockerfile:
+
+Procfile → for Render/Heroku style deployment.
+
+Dockerfile → so the app can be containerized and run anywhere with Docker.
+
+I deployed it on Render, which means you can test it directly [here](https://recommender-system-1-p6t4.onrender.com/).
+
+## **Future Work**
+
+- Try out more advanced recommendation methods (e.g., deep learning-based recommenders).
+
+- Improve the UI further with product images, categories, etc.
+
+- Optimize for larger datasets and users.
+
+## **Author**
+
+Yves Mfitumukiza Ndayisaba
+[yventobusiness24@gmail.com](mailto:yventobusiness24@gmail.com)
+
+[LinkedIn](https://www.linkedin.com/in/yves-mfitumukiza-ndayisaba/)
