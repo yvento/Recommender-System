@@ -32,7 +32,7 @@ def recommend():
     top_recommendations = new_recommendations.sort_values(by='Predicted Rating', ascending=False).head(products_number)
 
     # Generate recommendations for the requested user
-    output = list(zip(top_recommendations['ProductID'], round(top_recommendations['Predicted Rating'], 2)))
+    output = list(zip(top_recommendations['ProductID'], round(top_recommendations['Predicted Rating'], 2), top_recommendations['Name']))
 
     return jsonify(output)
 
