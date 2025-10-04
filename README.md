@@ -38,7 +38,7 @@ This basically means the model predicts within about **0.8 stars on average**, w
 ├── Recommendation Model.pkl      # Trained SVD model
 ├── Predicted ratings.csv         # Predictions generated for recommendations
 ├── requirements.txt              # Dependencies
-├── pyproject.toml                 # Project metadata
+├── pyproject.toml                # Project metadata
 ├── runtime.txt                   # Runtime environment (Python version)
 ├── Procfile                      # For deployment on Render/Heroku
 ├── Dockerfile                    # Containerization setup
@@ -90,7 +90,8 @@ I deployed it on Render, which means you can test it directly [here](https://rec
 
 ## **Author**
 
-**Yves Mfitumukiza Ndayisaba**
+**Yves Mfitumukiza Ndayisaba**  
+
 [yventobusiness24@gmail.com](mailto:yventobusiness24@gmail.com)
 
 [LinkedIn](https://www.linkedin.com/in/yves-mfitumukiza-ndayisaba/)
