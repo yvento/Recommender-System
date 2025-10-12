@@ -31,17 +31,17 @@ This basically means the model predicts within about **0.8 stars on average**, w
 
 ```
 .
-├── Data/                         # Dataset files
-├── templates/                    # HTML templates for Flask
-├── app.py                        # Flask application
-├── Recommendation system.ipynb   # Notebook used for training and experiments
-├── Recommendation Model.pkl      # Trained SVD model
-├── Predicted ratings.csv         # Predictions generated for recommendations
-├── requirements.txt              # Dependencies
-├── pyproject.toml                # Project metadata
-├── runtime.txt                   # Runtime environment (Python version)
-├── Procfile                      # For deployment on Render/Heroku
-├── Dockerfile                    # Containerization setup
+├── Data/                         
+├── templates/                    
+├── app.py                        
+├── Recommendation system.ipynb  
+├── Recommendation Model.pkl     
+├── Predicted ratings.csv        
+├── requirements.txt            
+├── pyproject.toml          
+├── runtime.txt              
+├── Procfile                 
+├── Dockerfile                    
 └── README.md
 ```
 
